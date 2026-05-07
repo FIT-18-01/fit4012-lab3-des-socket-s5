@@ -1,0 +1,23 @@
+Date: 2026-05-07
+Member: Phạm Thế Đức
+
+Scenario:
+Happy path sender/receiver communication.
+
+Input:
+Hello FIT4012
+
+Sender Output:
+Nhập bản tin: Hello FIT4012
+[+] Đã gửi bản mã.
+Key: 2f45689a29276dc7
+IV: 193bc522fe2776d9
+Ciphertext: 26b4a990bdebea6dcb795a2ae6d3f34d
+
+Receiver Output:
+Đang lắng nghe 0.0.0.0:6000...
+Kết nối từ ('127.0.0.1', 53814)
+[+] Bản tin gốc: Hello FIT4012
+
+Result:
+Message decrypted successfully.

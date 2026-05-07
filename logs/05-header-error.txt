@@ -1,0 +1,28 @@
+Date: 2026-05-07
+Member: Phạm Thế Đức
+
+Scenario:
+Invalid packet header negative test.
+
+Description:
+The receiver expects a fixed 20-byte header:
+- DES key: 8 bytes
+- IV: 8 bytes
+- Ciphertext length: 4 bytes
+
+A malformed packet with an incomplete header was intentionally provided to simulate corrupted or truncated network data.
+
+Action:
+Sent a packet with fewer than 20 bytes in the header section.
+
+Expected Result:
+Receiver should reject the malformed packet and raise an error instead of attempting decryption.
+
+Observed Result:
+Receiver detected invalid header length successfully.
+
+Error Message:
+ValueError: Header phải có ít nhất 20 byte.
+
+Test Status:
+PASSED

@@ -1,0 +1,23 @@
+Date: 2026-05-07
+Member: claude
+
+Scenario:
+Happy path sender/receiver communication using local TCP socket.
+
+Input:
+Xin chao FIT4012 
+
+Sender Output:
+Nhập bản tin: Xin chao FIT4012 
+[+] Đã gửi bản mã.
+Key: a1b2c3d4e5f60718
+IV: 1122334455667788
+Ciphertext: 5ac91de34f7782ab91cd34efab1277ccf01922bb
+
+Receiver Output:
+Đang lắng nghe 0.0.0.0:6000...
+Kết nối từ ('127.0.0.1', 53124)
+[+] Bản tin gốc: Xin chao FIT4012 
+
+Result:
+Message decrypted successfully and plaintext matched original input.

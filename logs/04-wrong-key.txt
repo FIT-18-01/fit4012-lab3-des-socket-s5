@@ -1,0 +1,31 @@
+Date: 2026-05-07
+Member: Phạm Thế Đức
+
+Scenario:
+Wrong-key negative test.
+
+Description:
+A plaintext message was encrypted using DES-CBC with a valid 8-byte DES key and IV.
+During decryption, a different DES key was intentionally used to simulate an attacker or receiver using the wrong secret key.
+
+Original Plaintext:
+Thong diep dung de test wrong key
+
+Correct Key:
+12345678
+
+Wrong Key Used:
+87654321
+
+Expected Result:
+The decrypt operation should not recover the original plaintext correctly.
+The system should either:
+- raise a ValueError during PKCS#7 unpadding, or
+- return corrupted plaintext different from the original message.
+
+Observed Result:
+Recovered plaintext did not match the original plaintext.
+Wrong-key detection behavior worked as expected.
+
+Test Status:
+PASSED

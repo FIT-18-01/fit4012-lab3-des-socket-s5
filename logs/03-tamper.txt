@@ -1,0 +1,27 @@
+Date: 2026-05-07
+Member: Pham The Duc
+
+Scenario:
+Tampered ciphertext negative test.
+
+Description:
+A valid ciphertext was generated using DES-CBC encryption.
+Before decryption, one byte in the ciphertext was modified manually
+to simulate packet tampering during network transmission.
+
+Original Plaintext:
+Thong diep dung de test tamper
+
+Action:
+Modified the last byte of ciphertext using XOR operation: tampered[-1] ^= 0x01
+
+Expected Result:
+Decrypt should raise ValueError during PKCS#7 unpadding, or produce
+corrupted plaintext different from the original message.
+
+Observed Result:
+Tampered ciphertext was detected successfully.
+Decrypt raised ValueError / recovered plaintext did not match original.
+
+Test Status:
+PASSED

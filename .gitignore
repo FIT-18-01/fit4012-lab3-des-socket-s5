@@ -3,7 +3,6 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
-*.txt
 !.gitkeep
 venv/
 .venv/
